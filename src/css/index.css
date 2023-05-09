@@ -10,6 +10,56 @@
   /* Legacy iOS */
 }
 
-h1{
-    color: red;
+:root{
+  --text-link: #3730a3;
+  --text-dark: #030712;
+  --text-light: #1f2937;
+  --bg-light: #f9fafb;
+  --bg-dark: #d1d5db;
+  --font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --font-size: 1.125rem;
+  --line-height: 1.5;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--text-light);
+  background-color: var(--bg-light);
+}
+
+.logo{
+  font-size: 1.5rem;
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+h1{
+  font-size: 2rem;
+  color: var(--text-dark);
+  font-weight: 400;
+}
+h2{
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  font-weight: 400;
+}
+h3{
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  font-weight: 400;
+}
+
