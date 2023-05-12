@@ -6,17 +6,25 @@
   font-weight: 400;
   src: url("/fonts/poppins-v20-latin-regular.eot");
   /* IE9 Compat Modes */
-  src: local(""), url("/fonts/poppins-v20-latin-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/poppins-v20-latin-regular.woff2") format("woff2"), url("/fonts/poppins-v20-latin-regular.woff") format("woff"), url("/fonts/poppins-v20-latin-regular.ttf") format("truetype"), url("/fonts/poppins-v20-latin-regular.svg#Poppins") format("svg");
+  src: local(""),
+    url("/fonts/poppins-v20-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/poppins-v20-latin-regular.woff2") format("woff2"),
+    url("/fonts/poppins-v20-latin-regular.woff") format("woff"),
+    url("/fonts/poppins-v20-latin-regular.ttf") format("truetype"),
+    url("/fonts/poppins-v20-latin-regular.svg#Poppins") format("svg");
   /* Legacy iOS */
 }
 
-:root{
+:root {
   --text-link: #3730a3;
   --text-dark: #030712;
   --text-light: #1f2937;
   --bg-light: #f9fafb;
   --bg-dark: #d1d5db;
-  --font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
   --font-size: 1.125rem;
   --line-height: 1.5;
 }
@@ -41,25 +49,137 @@ body {
   background-color: var(--bg-light);
 }
 
-.logo{
+/* Fonts */
+
+.logo {
   font-size: 1.5rem;
   color: var(--text-link);
   text-decoration: none;
 }
 
-h1{
+h1 {
   font-size: 2rem;
   color: var(--text-dark);
   font-weight: 400;
 }
-h2{
+h2 {
   font-size: 1.75rem;
   color: var(--text-dark);
   font-weight: 400;
 }
-h3{
+h3 {
   font-size: 1.5rem;
   color: var(--text-dark);
   font-weight: 400;
 }
+/* A11y */
 
+.sr-only,
+.skip-to-content:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+
+.skip-to-content {
+  background: white;
+  color: black;
+  padding: 0.5em 1em;
+  margin-inline: auto;
+  transform: translateY(-120%);
+  transition: transform 500ms ease-in;
+  position: absolute;
+  z-index: 1000;
+}
+.skip-to-content:focus {
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Utilities */
+
+.wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.d-flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+
+/* Navbar */
+.navbar {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  margin-inline: auto;
+  border-bottom: solid 1px var(--bg-dark);
+  width: 90%;
+  max-width: 1200px;
+  @media (width >= 768px) {
+    margin-top: 2rem;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-dark);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--text-dark);
+  .text {
+    text-align: center;
+  }
+  .unnoetige__links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-bottom: 0.75rem;
+  }
+  @media (width >= 768px) {
+    .unnoetige__links {
+      margin-top: 5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+}
+.back-to-top {
+  background-color: var(--bg-dark);
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 0;
+  #skip-to-top {
+    text-decoration: none;
+    color: var(--text-link);
+    display: flex;
+    justify-content: center;
+  }
+  .text {
+    cursor: pointer;
+  }
+  @media (width >= 768px) {
+    margin-top: 6.5rem;
+  }
+}
